@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SalesOrderSenderService.Application\SalesOrderSenderService.Application.csproj" />
+    <ProjectReference Include="..\SalesOrderSenderService.Infra.Data\SalesOrderSenderService.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
