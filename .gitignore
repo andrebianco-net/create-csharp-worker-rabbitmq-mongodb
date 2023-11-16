@@ -36,3 +36,4 @@ project.assets.json
 
 # ignore vscode configuration
 .vscode/
+.vs
