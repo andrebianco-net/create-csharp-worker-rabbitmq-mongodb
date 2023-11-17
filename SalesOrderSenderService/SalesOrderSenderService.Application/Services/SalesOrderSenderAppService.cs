@@ -9,10 +9,10 @@ namespace SalesOrderSenderService.Application.Services
         private readonly ISalesOrderService _salesOrderService;
         private readonly ILogger<SalesOrderSenderAppService> _logger;
 
-        public SalesOrderSenderAppService(ISalesOrderService productService,
+        public SalesOrderSenderAppService(ISalesOrderService salesOrderService,
                                           ILogger<SalesOrderSenderAppService> logger)
         {
-            _salesOrderService = productService;
+            _salesOrderService = salesOrderService;
             _logger = logger;
         }
 

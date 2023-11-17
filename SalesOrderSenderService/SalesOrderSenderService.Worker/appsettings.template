@@ -10,7 +10,7 @@
   },
   "Serilog": {
     "Folder": "Log",
-    "File": "ProductFeederServiceWorker.log",
+    "File": "SalesOrderSenderServiceWorker.log",
     "Size": 5242880
   },
   "MongoDB": {

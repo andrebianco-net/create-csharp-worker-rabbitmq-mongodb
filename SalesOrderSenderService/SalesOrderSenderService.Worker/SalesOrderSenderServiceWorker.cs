@@ -22,13 +22,13 @@ public class SalesOrderSenderServiceWorker : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             _logger.LogInformation($"SalesOrderSenderServiceWorker -> Worker running at: {DateTimeOffset.Now}");
-            await ProductFeederRun(stoppingToken);
+            await SalesOrderSenderRun(stoppingToken);
             int interval = int.Parse(_configuration["Worker:Interval"].ToString());
             await Task.Delay(interval, stoppingToken);
         }
     }
 
-    private async Task ProductFeederRun(CancellationToken stoppingToken)
+    private async Task SalesOrderSenderRun(CancellationToken stoppingToken)
     {
         using (var scope = _serviceProvider.CreateScope())
         {
