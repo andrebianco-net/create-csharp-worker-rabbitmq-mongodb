@@ -5,6 +5,6 @@ namespace SalesOrderSenderService.Domain.Interfaces
     public interface ISalesOrderRepository
     {
         Task<IEnumerable<SalesOrder>> GetSalesOrdersAsync();
-        Task SalesOrderUpdateAcceptedOrder(SalesOrder salesOrder);
+        Task UpdateAcceptedOrder(SalesOrder salesOrder);
     }
 }

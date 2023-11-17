@@ -11,7 +11,7 @@ namespace SalesOrderSenderService.Domain.Entities
 
         public int CustomerId { get; set; }
         public int CategoryId { get; set; }
-        public Items Items { get; set; }
+        public List<int> ListProductId { get; set; }
         public int PaymentType { get; set; }
 
         [BsonRepresentation(BsonType.Decimal128)]
@@ -19,10 +19,5 @@ namespace SalesOrderSenderService.Domain.Entities
         public string SoldAt { get; set; }
         public string createdAt { get; set; }
         public bool AcceptedOrder { get; set; }
-    }
-
-    public class Items
-    {
-        public List<int> ListProductId { get; set; }
     }
 }

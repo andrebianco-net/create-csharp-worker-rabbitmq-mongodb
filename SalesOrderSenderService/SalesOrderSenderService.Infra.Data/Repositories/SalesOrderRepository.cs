@@ -35,15 +35,17 @@ namespace SalesOrderSenderService.Infra.Data.Repositories
 
         public async Task<IEnumerable<SalesOrder>> GetSalesOrdersAsync()
         {
-            return await _salesOrdersRepository.Find(new BsonDocument()).ToListAsync();
+            FilterDefinition<SalesOrder> filter = Builders<SalesOrder>.Filter.Eq("AcceptedOrder", false);
+
+            return await _salesOrdersRepository.Find(filter).ToListAsync();
         }
 
-        public async Task SalesOrderUpdateAcceptedOrder(SalesOrder SalesOrder)
+        public async Task UpdateAcceptedOrder(SalesOrder salesOrder)
         {
-            FilterDefinition<SalesOrder> filter = Builders<SalesOrder>.Filter.Eq("Id", SalesOrder.Id);
+            FilterDefinition<SalesOrder> filter = Builders<SalesOrder>.Filter.Eq("Id", salesOrder.Id);
 
             var update = Builders<SalesOrder>.Update
-                            .Set(p => p.AcceptedOrder, SalesOrder.AcceptedOrder);
+                            .Set(p => p.AcceptedOrder, salesOrder.AcceptedOrder);
 
             await _salesOrdersRepository.UpdateOneAsync(filter, update);
         }

@@ -16,9 +16,14 @@ namespace SalesOrderSenderService.Application.Services
             _logger = logger;
         }
 
-        public Task SalesOrderSenderRun()
+        public async Task SalesOrderSenderRun()
         {
-            throw new NotImplementedException();
+            // IEnumerable<SalesOrderDTO> listSalesOrder = await _salesOrderService.GetSalesOrders();
+
+            // SalesOrderDTO salesOrderDTO = listSalesOrder.FirstOrDefault();
+            // salesOrderDTO.AcceptedOrder = true;
+
+            // _salesOrderService.UpdateAcceptedOrder(salesOrderDTO);
         }
     }
 }

@@ -25,19 +25,14 @@ namespace SalesOrderSenderService.Infra.IoC
             );
 
             // Repository
-            // services.AddScoped<IProductRepository, ProductRepository>();
-            // services.AddScoped<IExternalAPIRepository, ExternalAPIRepository>();
+            services.AddScoped<ISalesOrderRepository, SalesOrderRepository>();
 
-            // // Service
-            // services.AddScoped<IProductService, ProductService>();
-            // services.AddScoped<IProductFeederAppService, ProductFeederAppService>();
-            // services.AddScoped<IExternalAPIService, ExternalAPIService>();
+            // Service
+            services.AddScoped<ISalesOrderService, SalesOrderService>();
+            services.AddScoped<ISalesOrderSenderAppService, SalesOrderSenderAppService>();
 
-            // // External API
-            // services.AddScoped<IProductRegistrationAPI, ProductRegistrationAPI>();
-
-            // // Mapper
-            // services.AddAutoMapper(typeof(DomainToDTOMappingProfile));            
+            // Mapper
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile));            
 
             return services;
         }

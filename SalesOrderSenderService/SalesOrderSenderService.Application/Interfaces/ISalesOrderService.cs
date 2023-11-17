@@ -6,6 +6,6 @@ namespace SalesOrderSenderService.Application.Interfaces
     {
         Task<IEnumerable<SalesOrderDTO>> GetSalesOrders();
 
-        Task SalesOrderUpdateAcceptedOrder(SalesOrderDTO SalesOrder);
+        Task UpdateAcceptedOrder(SalesOrderDTO salesOrder);
     }
 }
