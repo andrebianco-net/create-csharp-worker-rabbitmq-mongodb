@@ -1,10 +1,17 @@
+using SalesOrderSenderService.Infra.IoC;
 using SalesOrderSenderService.Worker;
+using Serilog;
+
 
 IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+    .ConfigureServices((hostContext, services) =>
     {
-        services.AddHostedService<Worker>();
-    })
+        services.AddInfrastructure(hostContext.Configuration);
+        services.AddInfrastructureSerilog(hostContext.Configuration);
+        services.AddHostedService<SalesOrderSenderServiceWorker>();        
+    })  
+    .UseSerilog()
+    .UseWindowsService()
     .Build();
 
 host.Run();

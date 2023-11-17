@@ -10,6 +10,12 @@
     <ProjectReference Include="..\SalesOrderSenderService.Domain\SalesOrderSenderService.Domain.csproj" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>  
+
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Interfaces\" />

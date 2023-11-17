@@ -1,0 +1,3 @@
+namespace SalesOrderSenderService.Application.Services
+{
+}
