@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SalesOrderSenderService.Domain\SalesOrderSenderService.Domain.csproj" />
+    <ProjectReference Include="..\SalesOrderSenderService.RabbitMQ\SalesOrderSenderService.RabbitMQ.csproj" />
   </ItemGroup>
 
 

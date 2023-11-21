@@ -7,12 +7,15 @@ namespace SalesOrderSenderService.Application.Services
     public class SalesOrderSenderAppService : ISalesOrderSenderAppService
     {
         private readonly ISalesOrderService _salesOrderService;
+        private readonly ISalesOrderSenderAppService _salesOrderSenderAppService;
         private readonly ILogger<SalesOrderSenderAppService> _logger;
 
         public SalesOrderSenderAppService(ISalesOrderService salesOrderService,
+                                          ISalesOrderSenderAppService salesOrderSenderAppService,
                                           ILogger<SalesOrderSenderAppService> logger)
         {
             _salesOrderService = salesOrderService;
+            _salesOrderSenderAppService = salesOrderSenderAppService;
             _logger = logger;
         }
 

@@ -6,7 +6,8 @@ using SalesOrderSenderService.Application.Mappings;
 using SalesOrderSenderService.Domain.Interfaces;
 using SalesOrderSenderService.Infra.Data.Repositories;
 using SalesOrderSenderService.Infra.Data.Context;
-
+using SalesOrderSenderService.RabbitMQ.Interfaces;
+using SalesOrderSenderService.RabbitMQ;
 
 namespace SalesOrderSenderService.Infra.IoC
 {
@@ -26,10 +27,15 @@ namespace SalesOrderSenderService.Infra.IoC
 
             // Repository
             services.AddScoped<ISalesOrderRepository, SalesOrderRepository>();
+            services.AddScoped<ISalesOrderSenderRabbitMQRepository, SalesOrderSenderRabbitMQRepository>();
 
             // Service
             services.AddScoped<ISalesOrderService, SalesOrderService>();
+            services.AddScoped<ISalesOrderSenderRabbitMQService, SalesOrderSenderRabbitMQService>();
             services.AddScoped<ISalesOrderSenderAppService, SalesOrderSenderAppService>();
+
+            // RabbitMQ
+            services.AddScoped<ISalesOrderSenderRabbitMQ, SalesOrderSenderRabbitMQ>();
 
             // Mapper
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile));            
@@ -37,4 +43,5 @@ namespace SalesOrderSenderService.Infra.IoC
             return services;
         }
     }
+
 }

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SalesOrderSenderService.RabbitMQ.Interfaces
+﻿namespace SalesOrderSenderService.RabbitMQ.Interfaces
 {
     public interface ISalesOrderSenderRabbitMQ
     {
+        Task Send();
     }
 }
