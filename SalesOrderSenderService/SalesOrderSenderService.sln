@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesOrderSenderService.Inf
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Log", "Log", "{C82DB3C9-79BD-435A-B2CE-6C8C510C288F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesOrderSenderService.RabbitMQ", "SalesOrderSenderService.RabbitMQ\SalesOrderSenderService.RabbitMQ.csproj", "{7FF51A60-E4EA-4F59-B067-44BCE2C10187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{D9F9B9E1-41A8-4EB2-A2DE-5B65AC216C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9F9B9E1-41A8-4EB2-A2DE-5B65AC216C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9F9B9E1-41A8-4EB2-A2DE-5B65AC216C01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF51A60-E4EA-4F59-B067-44BCE2C10187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF51A60-E4EA-4F59-B067-44BCE2C10187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF51A60-E4EA-4F59-B067-44BCE2C10187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF51A60-E4EA-4F59-B067-44BCE2C10187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
