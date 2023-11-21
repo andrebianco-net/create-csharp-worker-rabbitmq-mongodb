@@ -12,7 +12,7 @@ namespace SalesOrderSenderService.Application.DTOs
         public int CustomerId { get; set; }
         public int CategoryId { get; set; }
         public List<int> ListProductId { get; set; }
-        public int PaymentType { get; set; }
+        public int PaymentTypeId { get; set; }
 
         [BsonRepresentation(BsonType.Decimal128)]
         public decimal Total { get; set; }
