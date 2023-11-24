@@ -21,16 +21,32 @@ namespace SalesOrderSenderService.Application.Services
 
         public async Task SalesOrderSenderRun()
         {
-            // IEnumerable<SalesOrderDTO> listSalesOrder = await _salesOrderService.GetSalesOrders();
 
-            // SalesOrderDTO salesOrderDTO = listSalesOrder.FirstOrDefault();
-            // salesOrderDTO.AcceptedOrder = true;
+            try
+            {
+                //First, take data from MongoDB
+                IEnumerable<SalesOrderDTO> salesOrders = await _salesOrderService.GetSalesOrders();
 
-            // _salesOrderService.UpdateAcceptedOrder(salesOrderDTO);
-            
-            bool successSending = false;
-            
-            successSending = await _salesOrderSenderRabbitMQService.Send("TestXXX");
+                //Second, send data to RabbitMQ queue
+                foreach (SalesOrderDTO salesOrder in salesOrders)
+                {
+                    bool successSending = false;                
+                    successSending = await _salesOrderSenderRabbitMQService.Send(salesOrder);
+                    
+                    if (successSending)
+                    {
+                        //Third, update file on MongoDB with accepted order result value
+                        salesOrder.AcceptedOrder = true;
+                        await _salesOrderService.UpdateAcceptedOrder(salesOrder);
+                    }
+                }
+
+            }
+            catch (System.Exception ex)
+            {
+                _logger.LogError($"SalesOrderReceiverService -> Error: {ex.Message}");
+            }
+
         }
     }
 }

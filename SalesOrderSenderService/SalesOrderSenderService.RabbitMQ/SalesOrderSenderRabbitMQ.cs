@@ -4,6 +4,8 @@ using RabbitMQ.Client;
 using SalesOrderSenderService.RabbitMQ.Interfaces;
 using System.Text;
 using System.Xml;
+using SalesOrderSenderService.Domain.Entities;
+using Newtonsoft.Json;
 
 namespace SalesOrderSenderService.RabbitMQ
 {
@@ -19,14 +21,13 @@ namespace SalesOrderSenderService.RabbitMQ
             _logger = logger;
         }
 
-        public async Task<bool> Send(string messageBody)
+        public async Task<bool> Send(SalesOrder salesOrder)
         {
-
-            //Test
-            //messageBody = Guid.NewGuid().ToString();
 
             try
             {
+                string messageBody = await convertDocToString(salesOrder);
+                
                 ConnectionFactory factory = new ConnectionFactory();
                 factory.Uri = new Uri(_configuration["RabbitMQ:Uri"]);
                 factory.ClientProvidedName = _configuration["RabbitMQ:ClientProvidedName"];
@@ -63,6 +64,11 @@ namespace SalesOrderSenderService.RabbitMQ
             }
 
             return true;
+        }
+
+        private async Task<string> convertDocToString(SalesOrder salesOrder)
+        {
+            return JsonConvert.SerializeObject(salesOrder);
         }
     }
 }

@@ -18,9 +18,10 @@ namespace SalesOrderSenderService.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<bool> Send(string messageBody)
+        public async Task<bool> Send(SalesOrderDTO salesOrderDTO)
         {
-            return await _salesOrderSenderRabbitMQRepository.Send(messageBody);
+            SalesOrder salesOrder = _mapper.Map<SalesOrder>(salesOrderDTO);
+            return await _salesOrderSenderRabbitMQRepository.Send(salesOrder);
         }
     }
 }
