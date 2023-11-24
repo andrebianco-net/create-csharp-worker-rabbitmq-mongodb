@@ -8,7 +8,7 @@ namespace SalesOrderSenderService.Application.Services
 {
     public class SalesOrderSenderRabbitMQService : ISalesOrderSenderRabbitMQService
     {
-        private ISalesOrderSenderRabbitMQRepository _salesOrderSenderRabbitMQRepository;
+        private readonly ISalesOrderSenderRabbitMQRepository _salesOrderSenderRabbitMQRepository;
         private readonly IMapper _mapper;
 
         public SalesOrderSenderRabbitMQService(ISalesOrderSenderRabbitMQRepository salesOrderSenderRabbitMQRepository, 
@@ -18,9 +18,9 @@ namespace SalesOrderSenderService.Application.Services
             _mapper = mapper;
         }
 
-        public async Task Send()
+        public async Task<bool> Send(string messageBody)
         {
-            throw new NotImplementedException();
+            return await _salesOrderSenderRabbitMQRepository.Send(messageBody);
         }
     }
 }

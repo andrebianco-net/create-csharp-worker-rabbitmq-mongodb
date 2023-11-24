@@ -7,15 +7,15 @@ namespace SalesOrderSenderService.Application.Services
     public class SalesOrderSenderAppService : ISalesOrderSenderAppService
     {
         private readonly ISalesOrderService _salesOrderService;
-        private readonly ISalesOrderSenderAppService _salesOrderSenderAppService;
+        private readonly ISalesOrderSenderRabbitMQService _salesOrderSenderRabbitMQService;
         private readonly ILogger<SalesOrderSenderAppService> _logger;
 
         public SalesOrderSenderAppService(ISalesOrderService salesOrderService,
-                                          ISalesOrderSenderAppService salesOrderSenderAppService,
+                                          ISalesOrderSenderRabbitMQService salesOrderSenderRabbitMQService,
                                           ILogger<SalesOrderSenderAppService> logger)
         {
             _salesOrderService = salesOrderService;
-            _salesOrderSenderAppService = salesOrderSenderAppService;
+            _salesOrderSenderRabbitMQService = salesOrderSenderRabbitMQService;
             _logger = logger;
         }
 
@@ -27,6 +27,10 @@ namespace SalesOrderSenderService.Application.Services
             // salesOrderDTO.AcceptedOrder = true;
 
             // _salesOrderService.UpdateAcceptedOrder(salesOrderDTO);
+            
+            bool successSending = false;
+            
+            successSending = await _salesOrderSenderRabbitMQService.Send("TestXXX");
         }
     }
 }

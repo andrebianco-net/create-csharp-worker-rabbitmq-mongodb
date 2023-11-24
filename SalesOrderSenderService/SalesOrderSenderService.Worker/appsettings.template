@@ -18,5 +18,11 @@
     "DatabaseName": "YOUR DATABASE NAME",
     "CollectionName": "SalesOrders"
   },
-  "RabbitMQ": {}
+  "RabbitMQ": {
+    "Uri": "amqp://YOUR USER:YOUR PASSWORD@YOUR HOST:5672",
+    "ClientProvidedName": "Sales Order Sender",
+    "ExchangeName": "ExchangeSalesOrder",
+    "RoutingKey": "sales-order-01",
+    "QueueName": "SalesOrder"
+  }
 }

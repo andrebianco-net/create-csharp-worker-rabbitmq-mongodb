@@ -4,6 +4,6 @@ namespace SalesOrderSenderService.Domain.Interfaces
 {
     public interface ISalesOrderSenderRabbitMQRepository
     {
-        Task Send();
+        Task<bool> Send(string messageBody);
     }
 }

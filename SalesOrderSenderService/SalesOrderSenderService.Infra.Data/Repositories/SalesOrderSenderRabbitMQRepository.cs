@@ -12,17 +12,17 @@ namespace SalesOrderSenderService.Infra.Data.Repositories
         private readonly ILogger<SalesOrderSenderRabbitMQRepository> _logger;
 
         public SalesOrderSenderRabbitMQRepository(ISalesOrderSenderRabbitMQ salesOrderSenderRabbitMQ,
-                                     IMapper mapper,
-                                     ILogger<SalesOrderSenderRabbitMQRepository> logger)
+                                                  IMapper mapper,
+                                                  ILogger<SalesOrderSenderRabbitMQRepository> logger)
         {
             _salesOrderSenderRabbitMQ = salesOrderSenderRabbitMQ;
             _mapper = mapper;
             _logger = logger;
         }
 
-        public async Task Send()
+        public async Task<bool> Send(string messageBody)
         {
-            throw new NotImplementedException();
+            return await _salesOrderSenderRabbitMQ.Send(messageBody);
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface ISalesOrderSenderRabbitMQ
     {
-        Task Send();
+        Task<bool> Send(string messageBody);
     }
 }

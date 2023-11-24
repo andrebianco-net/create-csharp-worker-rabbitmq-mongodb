@@ -4,6 +4,6 @@ namespace SalesOrderSenderService.Application.Interfaces
 {
     public interface ISalesOrderSenderRabbitMQService
     {
-        Task Send();
+        Task<bool> Send(string messageBody);
     }
 }
