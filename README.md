@@ -15,7 +15,7 @@ Sales Order Sender implementation propose a small example of how to create a Wor
 
 C# .NET Core Worker based on Clean Architecture, using Worker, Repository and xUnit to test the implementation. It will use MongoDB database and RabbitMQ/Docker as an integration queue.  
 
-The Solution will be a Worker which record purchases into MongoDB database (SalesOrders collection) and use RabbitMQ/Docker as an integration queue where the sales orders (messages) will be taken from an extremity to other.
+The Solution will be a Worker which records purchases into MongoDB database (SalesOrders collection) and use RabbitMQ/Docker as an integration queue where the sales orders (messages) will be taken from an extremity to other.
 
 ## How to run this project
 
