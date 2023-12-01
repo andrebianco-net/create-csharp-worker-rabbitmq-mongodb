@@ -50,7 +50,7 @@ $ dotnet test
 
 #### 5. Run project:
 
-$ dotnet run --project SalesOrderSender.Worker/SalesOrderSender.Worker.csproj
+$ dotnet run --project SalesOrderSenderService.Worker/SalesOrderSenderService.Worker.csproj
 
 #### 6. MongoDB document
 
