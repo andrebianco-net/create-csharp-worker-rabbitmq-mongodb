@@ -96,7 +96,7 @@ Define a real path to the log.
 
 #### 8. RabbitMQ/Docker (Localhost)
 
-Useful commands:
+<ins>Useful commands:</ins>
 
 ```bash
 $ sudo systemctl status docker
