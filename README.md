@@ -94,7 +94,7 @@ Define a real path to the log.
 },
 ```
 
-#### 8. RabbitMQ/Docker (Localhost)
+#### 8. RabbitMQ/Docker (localhost)
 
 <ins>Useful commands:</ins>
 
