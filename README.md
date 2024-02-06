@@ -29,6 +29,7 @@ $ git clone https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mon
 
 First rename the file appsettings.template to appsettings.json.
 
+```json
 "MongoDB": {
     "ConnectionURI": "YOUR MONGODB URI",
     "DatabaseName": "YOUR DATABASE NAME",
@@ -41,6 +42,7 @@ First rename the file appsettings.template to appsettings.json.
     "RoutingKey": "sales-order-01",
     "QueueName": "SalesOrder"
   }
+```
 
 #### 3. Compile project:
 
@@ -149,4 +151,15 @@ $ docker push youruricreatedinazurecontainerregistry.azurecr.io/salesorder-sende
 ###
 ![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/e8b37bae-d0f9-466e-a6d9-a120c5e976df)
 
+###
+![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/1a3bf638-af39-42fc-bb43-59e1bfc1e3f5)
+
+###
+![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/db69f6c7-e867-4e26-9bfc-a9d5e6406b0b)
+
+###
+![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/b965fae7-422f-40c7-ab0d-2070f2922fb9)
+
+###
+![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/b824813c-9b2c-4ded-9e17-369ca77e26e0)
 
