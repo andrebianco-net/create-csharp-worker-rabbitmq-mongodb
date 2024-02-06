@@ -21,7 +21,9 @@ The Solution will be a Worker which records purchases into MongoDB database (Sal
 
 #### 1. Clone project:
 
+```bash
 $ git clone https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb.git
+```
 
 #### 2. Update file appsettings.json with a valid:
 
@@ -42,20 +44,27 @@ First rename the file appsettings.template to appsettings.json.
 
 #### 3. Compile project:
 
+```bash
 $ dotnet build
+```
 
 #### 4. Test project:
 
+```bash
 $ dotnet test
+```
 
 #### 5. Run project:
 
+```bash
 $ dotnet run --project SalesOrderSenderService.Worker/SalesOrderSenderService.Worker.csproj
+```
 
 #### 6. MongoDB document
 
 As an example, use the JSon document bellow to insert into the SalesOrders collection.
 
+```json
 {
   "_id": {
     "$oid": "65577e42b9ca0bb418c6c43f"
@@ -69,29 +78,42 @@ As an example, use the JSon document bellow to insert into the SalesOrders colle
   "createdAt": "2023-11-16 18:59:00",
   "AcceptedOrder": true
 }
+```
 
 #### 7. Set the log folder
 
 Define a real path to the log.
 
+```json
 "Serilog": {
     "Folder": "Log",
     "File": "SalesOrderSenderServiceWorker.log",
     "Size": 5242880
 },
+```
 
 #### 8. RabbitMQ/Docker
 
 Useful commands:
 
+```bash
 $ sudo systemctl status docker
+```
 
+```bash
 $ docker run -d --hostname rmq --name rabbit-server -p 8080:15672 -p 5672:5672 rabbitmq:3-management
+```
 
+```bash
 $ sudo docker container ls --all --quiet --no-trunc --filter "name=rabbit-server"
+```
 
+```bash
 $ sudo docker start FULL-CONTAINER-ID
+```
 
+```bash
 $ sudo docker stop FULL-CONTAINER-ID
+```
 
 Access to http://localhost:8080/#/ and consider use guest/guest to access if it's the case
