@@ -92,7 +92,7 @@ Define a real path to the log.
 },
 ```
 
-#### 8. RabbitMQ/Docker
+#### 8. RabbitMQ/Docker (Localhost)
 
 Useful commands:
 
@@ -117,3 +117,36 @@ $ sudo docker stop FULL-CONTAINER-ID
 ```
 
 Access to http://localhost:8080/#/ and consider use guest/guest to access if it's the case
+
+#### 9. From Docker to Azure Container
+
+```bash
+$ docker build -t salesorder-sender-service .
+```
+
+```bash
+[$ docker run -it salesorder-sender-service]
+```
+
+```bash
+$ docker login youruricreatedinazurecontainerregistry.azurecr.io
+```
+
+```bash
+$ docker tag salesorder-sender-service youruricreatedinazurecontainerregistry.azurecr.io/salesorder-sender-service
+```
+
+```bash
+$ docker push youruricreatedinazurecontainerregistry.azurecr.io/salesorder-sender-service
+```
+
+```bash
+[$ docker pull youruricreatedinazurecontainerregistry.azurecr.io/salesorder-sender-service]
+```
+
+#### 10. Created in Azure Cloud Computing
+
+###
+![image](https://github.com/andrebianco-net/create-csharp-worker-rabbitmq-mongodb/assets/453193/e8b37bae-d0f9-466e-a6d9-a120c5e976df)
+
+
